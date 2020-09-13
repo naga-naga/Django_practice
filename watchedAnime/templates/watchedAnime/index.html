@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}観たアニメのリスト{% endblock %}
+{% block content %}
+<h1>観たアニメのリスト</h1>
+
+<table border="1">
+  <tr>
+    <th>タイトル</th>
+    <th>放送年</th>
+  </tr>
+  {% if anime_list %}
+    {% for anime in anime_list %}
+    <tr>
+      <td>{{ anime.title }}</td>
+      <td>{{ anime.year }}</td>
+    </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+<a href="/watchedAnime/register">新規登録</a>
+{% endblock %}
