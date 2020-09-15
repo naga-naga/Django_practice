@@ -1,5 +1,23 @@
 {% extends "base.html" %}
 {% block title %}アニメの登録{% endblock %}
 {% block content %}
-<p>登録画面だよ</p>
+<h1>登録画面だよ</h1>
+
+<form action="{% url 'watchedAnime:added' %}" method="post">
+  {% csrf_token %}
+  <p>
+    タイトル：<input type="text" name="animeTitle" size="40" required>
+  </p>
+  <p>
+    放送年：<input type="number" name="animeYear">
+  </p>
+  <p>
+    <input type="submit" value="追加">
+  </p>
+</form>
+
+<p>
+  <a href="{% url 'watchedAnime:index' %}">トップページに戻る</a>
+</p>
+
 {% endblock %}

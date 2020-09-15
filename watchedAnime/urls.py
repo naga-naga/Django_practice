@@ -6,4 +6,5 @@ app_name = "watchedAnime"
 urlpatterns = [
     path("", views.index, name="index"),
     path("register/", views.register, name="register"),
+    path("register/added", views.added, name="added"),
 ]

@@ -3,6 +3,9 @@
 {% block content %}
 <h1>観たアニメのリスト</h1>
 
+<!-- watchedAnime/urls.py で定義しているため，url が使える -->
+<a href="{% url 'watchedAnime:register' %}">新規登録</a>
+
 <table border="1">
   <tr>
     <th>タイトル</th>
@@ -18,6 +21,4 @@
   {% endif %}
 </table>
 
-<!-- watchedAnime/urls.py で定義しているため，url が使える -->
-<a href="{% url 'watchedAnime:register' %}">新規登録</a>
 {% endblock %}

@@ -17,3 +17,12 @@ def index(request):
 # アニメ追加画面
 def register(request):
     return render(request, "watchedAnime/register.html")
+
+# 追加完了画面
+def added(request):
+    title = request.POST["animeTitle"]
+    year = request.POST["animeYear"]
+    return render(request, "watchedAnime/added.html", {
+        "title": title,
+        "year": year,
+    })

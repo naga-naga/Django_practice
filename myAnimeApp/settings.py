@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     from .local_settings import *
 except ImportError:
-        pass
+    pass
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
