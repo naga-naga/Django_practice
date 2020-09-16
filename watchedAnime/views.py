@@ -20,8 +20,14 @@ def register(request):
 
 # 追加完了画面
 def added(request):
+    # 入力されたデータの読み取り
     title = request.POST["animeTitle"]
     year = request.POST["animeYear"]
+
+    # DB に保存
+    ani = Anime(title=title, year=year)
+    ani.save()
+
     return render(request, "watchedAnime/added.html", {
         "title": title,
         "year": year,
